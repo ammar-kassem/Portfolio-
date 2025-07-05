@@ -497,23 +497,121 @@
 </section>
   
   <!-- تواصل -->
-  <section id="contact" class="py-16 px-6 bg-gray-900">
-    <h2 class="text-3xl font-bold text-center mb-10">تواصل معي</h2>
-    <form class="max-w-xl mx-auto space-y-6">
-      <input type="text" placeholder="اسمك" class="w-full p-3 rounded bg-gray-800 text-white" />
-      <input type="text" placeholder="نوع المتجر أو المشروع" class="w-full p-3 rounded bg-gray-800 text-white" />
-      <textarea rows="5" placeholder="اكتب رسالتك هنا..." class="w-full p-3 rounded bg-gray-800 text-white"></textarea>
-      <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 rounded">أرسل</button>
-    </form>
-  </section>
+<section id="contact" class="py-24 px-6 bg-gradient-to-br from-[#014A3F] via-[#052c24] to-[#000] relative overflow-hidden text-white">
+  <!-- لمعة خلفية -->
+  <div class="absolute -top-20 -right-20 w-[300px] h-[300px] bg-[#FAFBEF]/10 rounded-full blur-3xl opacity-30 animate-pulse pointer-events-none"></div>
   
-  <!-- Footer -->
-  <footer class="bg-black py-6 text-center text-gray-500 text-sm">
-    &copy; 2025 - جميع الحقوق محفوظة - المتجر الشخصي للمبرمج
-  </footer>
+  <h2 class="text-4xl font-extrabold text-center mb-4 text-[#DFE9B7]">تواصل معي</h2>
+  <p class="text-center text-[#A0BC94] text-lg mb-12">جاهز لأي تعاون أو استفسار 💬</p>
+  
+  <!-- النموذج -->
+<form onsubmit="sendWhatsApp(event)" class="max-w-xl mx-auto space-y-6 bg-white/5 backdrop-blur-lg p-8 rounded-2xl border border-white/10 shadow-2xl">
+  
+  <div class="relative">
+    <i class="fa-solid fa-user absolute top-3.5 right-4 text-[#A0BC94]"></i>
+    <input id="name" type="text" placeholder="اسمك" required class="w-full p-3 pr-10 rounded-xl bg-white/10 text-white placeholder-[#A0BC94] focus:outline-none focus:ring-2 focus:ring-[#2E8656]" />
+  </div>
+  
+  <div class="relative">
+    <i class="fa-solid fa-store absolute top-3.5 right-4 text-[#A0BC94]"></i>
+    <input id="project" type="text" placeholder="نوع المتجر أو المشروع" required class="w-full p-3 pr-10 rounded-xl bg-white/10 text-white placeholder-[#A0BC94] focus:outline-none focus:ring-2 focus:ring-[#2E8656]" />
+  </div>
+  
+  <div class="relative">
+    <i class="fa-solid fa-message absolute top-3.5 right-4 text-[#A0BC94]"></i>
+    <textarea id="message" rows="5" placeholder="اكتب رسالتك هنا..." required class="w-full p-3 pr-10 rounded-xl bg-white/10 text-white placeholder-[#A0BC94] focus:outline-none focus:ring-2 focus:ring-[#2E8656]"></textarea>
+  </div>
+  
+  <button type="submit" class="w-full py-3 bg-[#2E8656] hover:bg-[#40744E] rounded-xl font-bold transition flex items-center justify-center gap-2">
+    <i class="fa-brands fa-whatsapp text-lg"></i>
+    أرسل عبر واتساب
+  </button>
+</form>
+
+<!-- سكربت الواتساب -->
+<script>
+  function sendWhatsApp(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const project = document.getElementById("project").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const fullMessage = `مرحباً، أنا ${name}%0Aأرغب بخدمة لمشروعي: ${project}%0Aتفاصيل الرسالة:%0A${message}`;
+    
+    const phone = "963986258215"; // بدون "+" حسب تنسيق واتساب
+    const url = `https://wa.me/${phone}?text=${fullMessage}`;
+
+    window.open(url, "_blank");
+  }
+</script>
+  
+  <!-- معلومات التواصل -->
+  <div class="mt-12 text-center space-y-4 text-[#DFE9B7]">
+    <p><i class="fa-solid fa-envelope text-[#A0BC94] mr-2"></i> ammarkassem215@gmail.com</p>
+    <p><i class="fa-solid fa-phone text-[#A0BC94] mr-2"></i> +963986258215</p>
+  </div>
+</section>
   
   
   
+  
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-gradient-to-t from-black via-[#014A3F] to-[#052c24] text-white py-20 px-6">
+  <div class="max-w-4xl mx-auto bg-[#FAFBEF]/20 border border-[#DFE9B7]/30 backdrop-blur-md p-10 rounded-2xl shadow-xl">
+    
+    <!-- عنوان -->
+    <h3 class="text-2xl font-bold mb-6 text-[#DFE9B7] text-center tracking-wider">تابعونا</h3>
+
+    <!-- أيقونات التواصل -->
+    <div class="flex flex-wrap justify-center gap-6 mb-8">
+      <div class="bg-[#FAFBEF]/30 p-4 rounded-xl shadow-md border border-[#DFE9B7]/40">
+        <a href="#" class="text-[#DFE9B7] text-2xl hover:text-white transition" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+      <div class="bg-[#FAFBEF]/30 p-4 rounded-xl shadow-md border border-[#DFE9B7]/40">
+        <a href="#" class="text-[#DFE9B7] text-2xl hover:text-white transition" aria-label="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </div>
+      <div class="bg-[#FAFBEF]/30 p-4 rounded-xl shadow-md border border-[#DFE9B7]/40">
+        <a href="#" class="text-[#DFE9B7] text-2xl hover:text-white transition" aria-label="X (Twitter)">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+      <div class="bg-[#FAFBEF]/30 p-4 rounded-xl shadow-md border border-[#DFE9B7]/40">
+        <a href="#" class="text-[#DFE9B7] text-2xl hover:text-white transition" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+      <div class="bg-[#FAFBEF]/30 p-4 rounded-xl shadow-md border border-[#DFE9B7]/40">
+        <a href="#" class="text-[#DFE9B7] text-2xl hover:text-white transition" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- تواصل سريع -->
+    <div class="flex justify-center gap-6 text-[#DFE9B7] text-xl mb-8">
+      <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp hover:text-white transition"></i></a>
+      <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram hover:text-white transition"></i></a>
+    </div>
+
+    <!-- وسائل الدفع -->
+    <div class="flex justify-center gap-6 text-[#DFE9B7] text-xl mb-6">
+      <i class="fa-brands fa-cc-visa"></i>
+      <i class="fa-brands fa-cc-mastercard"></i>
+      <i class="fa-brands fa-paypal"></i>
+      <i class="fa-brands fa-apple-pay"></i>
+      <i class="fa-solid fa-coins"></i> <!-- USDT -->
+    </div>
+
+    <!-- الحقوق -->
+    <p class="text-sm text-[#FAFBEF] text-center">&copy; 2025 - جميع الحقوق محفوظة - عمار قاسم</p>
+  </div>
+</footer>
   
   
   
