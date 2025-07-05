@@ -1,134 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>متجري الشخصي - المبرمج</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  </head>
-  <body class="bg-gray-950 text-white font-sans">
-    <!-- Hero -->
-    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-black to-gray-900">
-      <div class="text-center p-8">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">أنا المبرمج اللي يحوّل فكرتك إلى متجر ناجح</h1>
-        <p class="text-gray-400 text-lg mb-6">متخصص في تطوير المتاجر والحلول الرقمية الذكية</p>
-        <a href="#services" class="px-6 py-3 bg-indigo-600 rounded-full hover:bg-indigo-700 transition">تصفح مهاراتي</a>
-      </div>
-    </section><!-- خدماتي -->
-<section id="services" class="py-16 px-6 bg-gray-900">
-  <h2 class="text-3xl font-bold text-center mb-10">خدماتي</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-      <i class="fa-solid fa-store text-4xl text-indigo-400 mb-4"></i>
-      <h3 class="text-xl font-semibold mb-2">تطوير متجر إلكتروني</h3>
-      <p class="text-gray-400 mb-4">متجر متكامل احترافي بتصميم حديث وربط دفع.</p>
-      <button class="px-4 py-2 bg-indigo-600 rounded hover:bg-indigo-700">اطلب الخدمة</button>
-    </div>
-    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-      <i class="fa-solid fa-code-branch text-4xl text-indigo-400 mb-4"></i>
-      <h3 class="text-xl font-semibold mb-2">ربط API وواجهات</h3>
-      <p class="text-gray-400 mb-4">ربط سريع وآمن بين منصاتك وقواعد البيانات أو الطرف الثالث.</p>
-      <button class="px-4 py-2 bg-indigo-600 rounded hover:bg-indigo-700">اطلب الخدمة</button>
-    </div>
-    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
-      <i class="fa-solid fa-paint-brush text-4xl text-indigo-400 mb-4"></i>
-      <h3 class="text-xl font-semibold mb-2">تصميم واجهات UI/UX</h3>
-      <p class="text-gray-400 mb-4">تصميم عصري باستخدام Tailwind لواجهات سلسة ومتجاوبة.</p>
-      <button class="px-4 py-2 bg-indigo-600 rounded hover:bg-indigo-700">اطلب الخدمة</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>متجري الشخصي - المبرمج</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+<!-- استيراد خط Cairo من Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+<!-- تطبيق الخط على كامل الموقع -->
+<style>
+  body, h1, h2, h3, h4, h5, h6, p, a, button, div, span {
+    font-family: 'Cairo', sans-serif !important;
+  }
+</style>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-oBwzRgxXwMJu7YZJux7FzEvMFD/NUEsBu5Mw0o3oR2bzR+9WoH3iYmMw0kPG6PlGb68kHuC6CkFS06yGzqEHzA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-[#FAFBEF] text-white font-sans">
+
+  <!-- Header -->
+<header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] backdrop-blur-xl bg-[#014A3F]/80 text-[#DFE9B7] py-3 shadow-xl z-50 rounded-2xl border border-[#2E8656]/40 transition-all duration-300">
+  
+  <div class="container mx-auto flex items-center justify-between px-6">
+    
+    <!-- زر القائمة الجانبية -->
+    <button id="menuBtn" class="text-[#DFE9B7] hover:text-[#A0BC94] transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    
+    <!-- العنوان -->
+    <div class="text-2xl font-extrabold tracking-wide drop-shadow-md text-[#DFE9B7]">عمّار</div>
+    
+    <!-- زر التوجه للتواصل -->
+    <a href="#contact" class="text-[#DFE9B7] hover:text-[#A0BC94] transition">
+      <i class="fa-solid fa-phone text-xl"></i>
+    </a>
+    
+  </div>
+</header>
+  <!-- Sidebar -->
+<div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-emerald-950 text-white transform -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl z-50 rounded-r-3xl">
+  <div class="p-6 flex justify-between items-center border-b border-emerald-700/50">
+    <h2 class="text-xl font-bold">القائمة</h2>
+    <button id="closeSidebar" class="text-white hover:text-emerald-300 text-xl">✕</button>
+  </div>
+  <nav class="flex flex-col p-6 space-y-4 text-lg">
+    <a href="#hero" class="hover:text-emerald-300 transition">الرئيسية</a>
+    <a href="#services" class="hover:text-emerald-300 transition">الخدمات</a>
+    <a href="#portfolio" class="hover:text-emerald-300 transition">الأعمال</a>
+    <a href="#tools" class="hover:text-emerald-300 transition">الأدوات</a>
+    <a href="#reviews" class="hover:text-emerald-300 transition">التقييمات</a>
+    <a href="#contact" class="hover:text-emerald-300 transition">تواصل</a>
+  </nav>
+</div>
+  <!-- Sidebar Script -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    const closeSidebar = document.getElementById('closeSidebar');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.classList.remove('-translate-x-full');
+    });
+
+    closeSidebar.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+    });
+  </script>
+
+  <!-- Space for header -->
+  
+
+  <!-- Hero Section -->
+<section id="hero" class="relative h-screen bg-[#014A3F] text-white overflow-hidden">
+  <!-- دوائر ضبابية -->
+  <div class="absolute top-[-100px] left-[-100px] w-80 h-80 rounded-full bg-gradient-to-br from-[#DFE9B7]/40 to-[#A0BC94]/20 blur-3xl opacity-70 z-0"></div>
+  <div class="absolute bottom-[-100px] right-[-100px] w-80 h-80 rounded-full bg-gradient-to-tr from-[#40744E]/50 to-[#2E8656]/30 blur-3xl opacity-70 z-0"></div>
+
+  <!-- خلفية الجزيئات -->
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+  <!-- المحتوى -->
+  <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-[#DFE9B7]">
+      أهلاً بك، أنا <span class="text-[#2E8656]">عمار قاسم</span>
+    </h1>
+    <p class="text-lg md:text-xl max-w-2xl text-[#A0BC94] mb-10">
+      أصنع لك تجربة رقمية تحوّل الزوار إلى عملاء، والأفكار إلى أرباح. دع موقعك يتحدث باحترافية عنك ويُبهِر جمهورك من أول نظرة.
+    </p>
+
+    <!-- الأزرار -->
+    <div class="flex flex-col md:flex-row gap-4">
+      <a href="#services" class="bg-[#2E8656] hover:bg-[#40744E] text-white px-6 py-3 rounded-xl text-lg transition inline-flex items-center gap-2">
+        <i class="fas fa-th-list"></i>
+        تصفح خدماتي
+      </a>
+      <a href="#contact" class="border-2 border-[#2E8656] hover:bg-[#2E8656] hover:text-white text-[#2E8656] px-6 py-3 rounded-xl text-lg transition inline-flex items-center gap-2">
+        <i class="fas fa-envelope"></i>
+        تواصل معي
+      </a>
     </div>
   </div>
+
+  <!-- الموجات المتحركة -->
+  <div class="absolute bottom-0 left-0 w-full z-0">
+    <svg class="wave wave1" viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,60 C360,120 1080,0 1440,60 L1440,150 L0,150 Z" fill="#FAFBEF" fill-opacity="1"></path>
+    </svg>
+    <svg class="wave wave2 -mt-2" viewBox="0 0 1440 150" preserveAspectRatio="none">
+      <path d="M0,80 C360,140 1080,20 1440,80 L1440,150 L0,150 Z" fill="#FAFBEF" fill-opacity="0.5"></path>
+    </svg>
+  </div>
+
+  <!-- ستايل الموجات المتحركة -->
+  <style>
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 150px;
+      animation: waveAnimation 5s linear infinite;
+    }
+
+    .wave2 {
+      animation-delay: -5s;
+    }
+
+    @keyframes waveAnimation {
+      
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
 </section>
+
+
+<!-- خط متحرك بين الأقسام -->
+<div class="relative h-[5px] overflow-hidden my-20">
+  <!-- الخط المتحرك -->
+  <span class="absolute h-full w-1/4 bg-[#2E8656] rounded-full animate-move-line"></span>
+
+  <style>
+    @keyframes move-line {
+      0% {
+        transform: translateX(400%);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+
+    .animate-move-line {
+      animation: move-line 2.5s ease-in-out infinite;
+    }
+  </style>
+</div>
+
+
+
+  <!-- خدماتي -->
+<section id="services" class="py-20 px-6 bg-[#FAFBEF] text-[#014A3F]">
+  <h2 class="text-4xl font-extrabold text-center mb-4 text-[#014A3F]">خدماتي المميزة</h2>
+  <p class="text-center text-[#2E8656] text-lg mb-12">حلول رقمية بإبداع وخبرة… مصمّمة لتأخذ مشروعك إلى المستوى الاحترافي</p>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+    <!-- تطوير متجر إلكتروني -->
+    <div class="bg-white/20 backdrop-blur-lg border border-white/20 p-6 rounded-2xl shadow-2xl hover:scale-105 transform transition duration-300">
+      <div class="w-14 h-14 bg-[#2E8656] flex items-center justify-center rounded-xl transform rotate-12 mb-6">
+        <i class="fa-solid fa-store text-2xl text-[#DFE9B7] -rotate-12"></i>
+      </div>
+      <h3 class="text-2xl font-bold mb-2">تطوير متجر إلكتروني</h3>
+      <p class="text-[#014A3F] mb-4">بصمّم لك متجر احترافي متكامل، بتصميم عصري وتجربة شراء سلسة، مع ربط طرق الدفع والشحن.</p>
+      <button class="flex items-center gap-2 mt-2 px-5 py-2 rounded-xl bg-[#2E8656] hover:bg-[#256645] text-white transition">
+        <i class="fa-solid fa-cart-shopping"></i>
+        اطلب الخدمة
+      </button>
+    </div>
+
+    <!-- ربط API -->
+    <div class="bg-white/20 backdrop-blur-lg border border-white/20 p-6 rounded-2xl shadow-2xl hover:scale-105 transform transition duration-300">
+      <div class="w-14 h-14 bg-[#337CA0] flex items-center justify-center rounded-xl transform rotate-12 mb-6">
+        <i class="fa-solid fa-code-branch text-2xl text-[#E1F2F9] -rotate-12"></i>
+      </div>
+      <h3 class="text-2xl font-bold mb-2">ربط API وواجهات</h3>
+      <p class="text-[#014A3F] mb-4">أربط لك موقعك أو نظامك مع أي خدمة خارجية أو قاعدة بيانات بكفاءة عالية وأمان تام.</p>
+      <button class="flex items-center gap-2 mt-2 px-5 py-2 rounded-xl bg-[#337CA0] hover:bg-[#276484] text-white transition">
+        <i class="fa-solid fa-plug-circle-bolt"></i>
+        اطلب الخدمة
+      </button>
+    </div>
+
+    <!-- تصميم واجهات UI/UX -->
+    <div class="bg-white/20 backdrop-blur-lg border border-white/20 p-6 rounded-2xl shadow-2xl hover:scale-105 transform transition duration-300">
+      <div class="w-14 h-14 bg-[#C97B63] flex items-center justify-center rounded-xl transform rotate-12 mb-6">
+        <i class="fa-solid fa-pen-nib text-2xl text-[#FFF3EC] -rotate-12"></i>
+      </div>
+      <h3 class="text-2xl font-bold mb-2">تصميم واجهات UI/UX</h3>
+      <p class="text-[#014A3F] mb-4">أصمّم لك واجهات جذابة باستخدام Tailwind، بتجربة مستخدم متجاوبة وسلسة لكل الأجهزة.</p>
+      <button class="flex items-center gap-2 mt-2 px-5 py-2 rounded-xl bg-[#C97B63] hover:bg-[#AD6650] text-white transition">
+        <i class="fa-solid fa-pen-nib"></i>
+        اطلب الخدمة
+      </button>
+    </div>
+
+    <!-- تصميم هوية بصرية -->
+    <div class="bg-white/20 backdrop-blur-lg border border-white/20 p-6 rounded-2xl shadow-2xl hover:scale-105 transform transition duration-300">
+      <div class="w-14 h-14 bg-[#4B3F72] flex items-center justify-center rounded-xl transform rotate-12 mb-6">
+        <i class="fa-solid fa-lightbulb text-2xl text-[#EDE9F2] -rotate-12"></i>
+      </div>
+      <h3 class="text-2xl font-bold mb-2">تصميم هوية بصرية</h3>
+      <p class="text-[#2B1F4E] mb-4">أصمّم لك هوية بصرية كاملة تعبّر عن علامتك، تشمل الشعار، الألوان، والخطوط بأسلوب إبداعي ومتناسق.</p>
+      <button class="flex items-center gap-2 mt-2 px-5 py-2 rounded-xl bg-[#4B3F72] hover:bg-[#3A3160] text-white transition">
+        <i class="fa-solid fa-pen-nib"></i>
+        اطلب الخدمة
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- خط متحرك بين الأقسام -->
+<div class="relative h-[5px] overflow-hidden my-20">
+  <!-- الخط المتحرك -->
+  <span class="absolute h-full w-1/4 bg-[#2E8656] rounded-full animate-move-line"></span>
+
+  <style>
+    @keyframes move-line {
+      0% {
+        transform: translateX(400%);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+
+    .animate-move-line {
+      animation: move-line 2.5s ease-in-out infinite;
+    }
+  </style>
+</div>
 
 <!-- المعرض -->
-<section id="portfolio" class="py-16 px-6 bg-gray-950">
-  <h2 class="text-3xl font-bold text-center mb-10">نماذج من أعمالي</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div class="bg-gray-800 rounded-xl overflow-hidden shadow-md">
-      <img src="https://via.placeholder.com/400x200" class="w-full" alt="project1" />
-      <div class="p-4">
-        <h3 class="text-xl font-semibold">متجر إلكتروني للأزياء</h3>
-        <p class="text-gray-400 text-sm">باستخدام Shopify + Tailwind + Stripe</p>
-      </div>
+<section id="portfolio" class="py-20 px-6 bg-[#FAFBEF]">
+  <h2 class="text-4xl font-extrabold text-center text-[#014A3F] mb-4 tracking-wide">نماذج من أعمالي</h2>
+  <p class="text-center text-[#2E8656] text-lg mb-12">
+    حلول رقمية بإبداع وخبرة… مصمّمة لتأخذ مشروعك إلى المستوى الاحترافي
+  </p>
+
+  <div class="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+    <!-- كرت مشروع -->
+    <div
+      class="rounded-3xl overflow-hidden border border-[#A0BC94]/30 bg-[#014A3F]/80 backdrop-blur-md transition duration-500 hover:scale-[1.03] hover:shadow-[0_15px_30px_rgba(223,233,183,0.3),_-10px_-10px_20px_rgba(223,233,183,0.2)] shadow-[inset_0_0_0.5px_rgba(255,255,255,0.1)]"
+      style="box-shadow: -8px -8px 20px #FCE96A33, 8px 8px 20px #FCE96A33;"
+    >
+      <a href="https://example.com/project1-preview" target="_blank" rel="noopener noreferrer" class="block">
+        <div class="p-4">
+          <img
+            src="images/1.png"
+            alt="متجر إلكتروني للأزياء"
+            class="rounded-xl w-full h-48 object-cover mb-4"
+            loading="lazy"
+          />
+        </div>
+        <div class="px-6 pb-6">
+          <h3 class="text-2xl font-semibold text-[#DFE9B7] mb-2">متجر إلكتروني للأزياء</h3>
+          <p class="text-[#A0BC94] mb-4">منصة متكاملة للتجارة الإلكترونية مع الدفع السلس</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-[#40744E] text-[#DFE9B7] text-xs font-medium px-3 py-1 rounded-full">Shopify</span>
+            <span class="bg-[#40744E] text-[#DFE9B7] text-xs font-medium px-3 py-1 rounded-full">Tailwind CSS</span>
+            <span class="bg-[#40744E] text-[#DFE9B7] text-xs font-medium px-3 py-1 rounded-full">Stripe</span>
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="bg-gray-800 rounded-xl overflow-hidden shadow-md">
-      <img src="https://via.placeholder.com/400x200" class="w-full" alt="project2" />
-      <div class="p-4">
-        <h3 class="text-xl font-semibold">لوحة تحكم لإدارة المنتجات</h3>
-        <p class="text-gray-400 text-sm">باستخدام Django + Vue.js</p>
-      </div>
-    </div>
-    <div class="bg-gray-800 rounded-xl overflow-hidden shadow-md">
-      <img src="https://via.placeholder.com/400x200" class="w-full" alt="project3" />
-      <div class="p-4">
-        <h3 class="text-xl font-semibold">موقع شخصي تفاعلي</h3>
-        <p class="text-gray-400 text-sm">HTML + Tailwind + GSAP</p>
-      </div>
-    </div>
+
+    <!-- كرر الكرت لباقي المشاريع (مع تغيير المحتوى فقط) بنفس التنسيق -->
+
   </div>
 </section>
 
-<!-- الأدوات -->
-<section id="tools" class="py-16 px-6 bg-gray-900">
-  <h2 class="text-3xl font-bold text-center mb-10">Toolkits & Stacks</h2>
-  <div class="grid md:grid-cols-3 gap-8">
-    <div class="bg-gray-800 p-6 rounded-xl">
-      <h3 class="text-xl font-bold mb-2">Frontend Kit</h3>
-      <ul class="text-gray-400 list-disc pl-4">
-        <li>Tailwind CSS</li>
-        <li>React.js</li>
-        <li>Alpine.js</li>
-      </ul>
-    </div>
-    <div class="bg-gray-800 p-6 rounded-xl">
-      <h3 class="text-xl font-bold mb-2">Backend Kit</h3>
-      <ul class="text-gray-400 list-disc pl-4">
-        <li>Django</li>
-        <li>Node.js</li>
-        <li>PostgreSQL</li>
-      </ul>
-    </div>
-    <div class="bg-gray-800 p-6 rounded-xl">
-      <h3 class="text-xl font-bold mb-2">Deployment & Tools</h3>
-      <ul class="text-gray-400 list-disc pl-4">
-        <li>Vercel / Netlify</li>
-        <li>Git & GitHub</li>
-        <li>Docker</li>
-      </ul>
-    </div>
-  </div>
-</section>
 
-<!-- التقييمات -->
-<section id="reviews" class="py-16 px-6 bg-gray-950">
-  <h2 class="text-3xl font-bold text-center mb-10">ماذا قالوا عني؟</h2>
-  <div class="grid md:grid-cols-2 gap-8">
-    <div class="bg-gray-800 p-6 rounded-xl">
-      <p class="text-gray-300 italic">"مبرمج عبقري! سلم المشروع قبل الوقت المحدد بجودة مذهلة"</p>
-      <h4 class="mt-4 text-indigo-400 font-semibold">أحمد - صاحب متجر تقني</h4>
+
+
+<!-- خط متحرك بين الأقسام -->
+<div class="relative h-[5px] overflow-hidden my-20">
+  <!-- الخط المتحرك -->
+  <span class="absolute h-full w-1/4 bg-[#2E8656] rounded-full animate-move-line"></span>
+
+  <style>
+    @keyframes move-line {
+      0% {
+        transform: translateX(400%);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+
+    .animate-move-line {
+      animation: move-line 2.5s ease-in-out infinite;
+    }
+  </style>
+</div>
+
+
+  <!-- الأدوات -->
+  <section id="tools" class="py-16 px-6 bg-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-10">Toolkits & Stacks</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-800 p-6 rounded-xl">
+        <h3 class="text-xl font-bold mb-2">Frontend Kit</h3>
+        <ul class="text-gray-400 list-disc pl-4">
+          <li>Tailwind CSS</li>
+          <li>React.js</li>
+          <li>Alpine.js</li>
+        </ul>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl">
+        <h3 class="text-xl font-bold mb-2">Backend Kit</h3>
+        <ul class="text-gray-400 list-disc pl-4">
+          <li>Django</li>
+          <li>Node.js</li>
+          <li>PostgreSQL</li>
+        </ul>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl">
+        <h3 class="text-xl font-bold mb-2">Deployment & Tools</h3>
+        <ul class="text-gray-400 list-disc pl-4">
+          <li>Vercel / Netlify</li>
+          <li>Git & GitHub</li>
+          <li>Docker</li>
+        </ul>
+      </div>
     </div>
-    <div class="bg-gray-800 p-6 rounded-xl">
-      <p class="text-gray-300 italic">"سريع ومبدع، حوّل فكرتي إلى واقع بزمن قياسي. أنصح بالتعامل معه جداً"</p>
-      <h4 class="mt-4 text-indigo-400 font-semibold">سارة - رائدة أعمال</h4>
+  </section>
+  
+  <!-- التقييمات -->
+  <section id="reviews" class="py-16 px-6 bg-gray-950">
+    <h2 class="text-3xl font-bold text-center mb-10">ماذا قالوا عني؟</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-gray-800 p-6 rounded-xl">
+        <p class="text-gray-300 italic">"مبرمج عبقري! سلم المشروع قبل الوقت المحدد بجودة مذهلة"</p>
+        <h4 class="mt-4 text-indigo-400 font-semibold">أحمد - صاحب متجر تقني</h4>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl">
+        <p class="text-gray-300 italic">"سريع ومبدع، حوّل فكرتي إلى واقع بزمن قياسي. أنصح بالتعامل معه جداً"</p>
+        <h4 class="mt-4 text-indigo-400 font-semibold">سارة - رائدة أعمال</h4>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+  <!-- تواصل -->
+  <section id="contact" class="py-16 px-6 bg-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-10">تواصل معي</h2>
+    <form class="max-w-xl mx-auto space-y-6">
+      <input type="text" placeholder="اسمك" class="w-full p-3 rounded bg-gray-800 text-white" />
+      <input type="text" placeholder="نوع المتجر أو المشروع" class="w-full p-3 rounded bg-gray-800 text-white" />
+      <textarea rows="5" placeholder="اكتب رسالتك هنا..." class="w-full p-3 rounded bg-gray-800 text-white"></textarea>
+      <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 rounded">أرسل</button>
+    </form>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-black py-6 text-center text-gray-500 text-sm">
+    &copy; 2025 - جميع الحقوق محفوظة - المتجر الشخصي للمبرمج
+  </footer>
+  
+  
+  
+  
+  
+  
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: {
+        value: 60,
+        density: { enable: true, value_area: 800 }
+      },
+      color: { value: "#A0BC94" },
+      shape: { type: "circle" },
+      opacity: {
+        value: 0.3,
+        random: true,
+        anim: { enable: false }
+      },
+      size: {
+        value: 4,
+        random: true,
+        anim: { enable: false }
+      },
+      line_linked: {
+        enable: true,
+        distance: 120,
+        color: "#2E8656",
+        opacity: 0.4,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 2,
+        direction: "none",
+        out_mode: "out"
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" }
+      },
+      modes: {
+        repulse: { distance: 100 },
+        push: { particles_nb: 4 }
+      }
+    },
+    retina_detect: true
+  });
+</script>  
+</body>
 
-<!-- تواصل -->
-<section id="contact" class="py-16 px-6 bg-gray-900">
-  <h2 class="text-3xl font-bold text-center mb-10">تواصل معي</h2>
-  <form class="max-w-xl mx-auto space-y-6">
-    <input type="text" placeholder="اسمك" class="w-full p-3 rounded bg-gray-800 text-white" />
-    <input type="text" placeholder="نوع المتجر أو المشروع" class="w-full p-3 rounded bg-gray-800 text-white" />
-    <textarea rows="5" placeholder="اكتب رسالتك هنا..." class="w-full p-3 rounded bg-gray-800 text-white"></textarea>
-    <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 rounded">أرسل</button>
-  </form>
-</section>
-
-<!-- Footer -->
-<footer class="bg-black py-6 text-center text-gray-500 text-sm">
-  &copy; 2025 - جميع الحقوق محفوظة - المتجر الشخصي للمبرمج
-</footer>
-
-  </body>
 </html>
