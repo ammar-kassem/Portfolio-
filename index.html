@@ -14,13 +14,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
-<!-- تطبيق الخط على كامل الموقع -->
-<style>
-  body, h1, h2, h3, h4, h5, h6, p, a, button, div, span {
-    font-family: 'Cairo', sans-serif !important;
-  }
-</style>
+<!-- إضافة مكتبة Swiper --><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 
+
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-oBwzRgxXwMJu7YZJux7FzEvMFD/NUEsBu5Mw0o3oR2bzR+9WoH3iYmMw0kPG6PlGb68kHuC6CkFS06yGzqEHzA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -39,8 +39,7 @@
       </svg>
     </button>
     
-    <!-- العنوان -->
-<!--     <div class="text-2xl font-extrabold tracking-wide drop-shadow-md text-[#DFE9B7]">عمّار</div> -->
+    <!-- لوغو -->
 <img src="images/logo.png" alt="logo" class="w-16"/>
     
     <!-- زر التوجه للتواصل -->
@@ -60,9 +59,8 @@
     <a href="#hero" class="hover:text-emerald-300 transition">الرئيسية</a>
     <a href="#services" class="hover:text-emerald-300 transition">الخدمات</a>
     <a href="#portfolio" class="hover:text-emerald-300 transition">الأعمال</a>
-    <a href="#tools" class="hover:text-emerald-300 transition">الأدوات</a>
     <a href="#reviews" class="hover:text-emerald-300 transition">التقييمات</a>
-    <a href="#contact" class="hover:text-emerald-300 transition">تواصل</a>
+    <a href="#contact" class="hover:text-emerald-300 transition">تواصل معنا</a>
   </nav>
 </div>
   <!-- Sidebar Script -->
@@ -101,17 +99,22 @@
       أصنع لك تجربة رقمية تحوّل الزوار إلى عملاء، والأفكار إلى أرباح. دع موقعك يتحدث باحترافية عنك ويُبهِر جمهورك من أول نظرة.
     </p>
 
-    <!-- الأزرار -->
-    <div class="flex flex-col md:flex-row gap-4">
-      <a href="#services" class="bg-[#2E8656] hover:bg-[#40744E] text-white px-6 py-3 rounded-xl text-lg transition inline-flex items-center gap-2">
-        <i class="fas fa-th-list"></i>
-        تصفح خدماتي
-      </a>
-      <a href="#contact" class="border-2 border-[#2E8656] hover:bg-[#2E8656] hover:text-white text-[#2E8656] px-6 py-3 rounded-xl text-lg transition inline-flex items-center gap-2">
-        <i class="fas fa-envelope"></i>
-        تواصل معي
-      </a>
-    </div>
+<!-- الأزرار داخل عنصر واحد مكبّر بظل واضح -->
+<div class="inline-flex rounded-xl overflow-hidden border-2 border-[#014A3F] shadow-2xl text-base">
+  
+  <!-- زر تصفح الخدمات (زيتي) -->
+  <a href="#services" class="bg-[#014A3F] hover:bg-[#1f5c4f] text-[#DFE9B7] px-6 py-3 transition flex items-center gap-2 border-l border-white/10 shadow-inner">
+    <i class="fas fa-th-list text-sm"></i>
+    خدماتي
+  </a>
+  
+  <!-- زر تواصل معي (أصفر) -->
+  <a href="#contact" class="bg-[#DFE9B7] hover:bg-[#cbd99f] text-[#014A3F] px-6 py-3 transition flex items-center gap-2 shadow-inner">
+    <i class="fas fa-envelope text-sm"></i>
+    تواصل
+  </a>
+  
+</div>
   </div>
 
   <!-- الموجات المتحركة -->
@@ -430,73 +433,104 @@
   
   <!-- التقييمات -->
 <section id="reviews" class="py-20 px-6 bg-[#014A3F] text-white">
-  <h2 class="text-4xl font-extrabold text-center mb-12 text-[#DFE9B7]">ماذا قالوا عني؟</h2>
-  
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-    
-    <!-- تقييم أحمد -->
-    <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-xl relative">
-      <i class="fa-solid fa-quote-right text-4xl text-[#A0BC94] absolute top-4 right-4 opacity-80"></i>
-      <div class="flex items-center gap-4 mb-4">
-        <img src="https://i.pravatar.cc/100?img=1" alt="صورة أحمد" class="w-14 h-14 rounded-full object-cover border-2 border-[#A0BC94]">
-        <div>
-          <h4 class="font-bold text-[#DFE9B7]">أحمد</h4>
-          <p class="text-sm text-[#A0BC94]">صاحب متجر تقني</p>
+  <h2 class="text-4xl font-extrabold text-center mb-12 text-[#DFE9B7]">ماذا قالوا عني؟</h2>  <div class="relative max-w-2xl mx-auto">
+    <!-- السلايدر -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper"><!-- تقييم أحمد -->
+    <div class="swiper-slide">
+      <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-xl relative">
+        <i class="fa-solid fa-quote-right text-4xl text-[#A0BC94] absolute top-4 right-4 opacity-80"></i>
+        <div class="flex items-center gap-4 mb-4">
+          <img src="https://i.pravatar.cc/100?img=1" alt="صورة أحمد" class="w-14 h-14 rounded-full object-cover border-2 border-[#A0BC94]">
+          <div>
+            <h4 class="font-bold text-[#DFE9B7]">أحمد</h4>
+            <p class="text-sm text-[#A0BC94]">صاحب متجر تقني</p>
+          </div>
+        </div>
+        <p class="text-[#F0F3D1] italic mb-4">"مبرمج عبقري! سلم المشروع قبل الوقت المحدد بجودة مذهلة."</p>
+        <div class="flex gap-1 text-yellow-400">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
         </div>
       </div>
-      <p class="text-[#F0F3D1] italic mb-4">"مبرمج عبقري! سلم المشروع قبل الوقت المحدد بجودة مذهلة."</p>
-      <div class="flex gap-1 text-yellow-400">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-      </div>
     </div>
-    
+
     <!-- تقييم سارة -->
-    <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-xl relative">
-      <i class="fa-solid fa-quote-right text-4xl text-[#A0BC94] absolute top-4 right-4 opacity-80"></i>
-      <div class="flex items-center gap-4 mb-4">
-        <img src="https://i.pravatar.cc/100?img=5" alt="صورة سارة" class="w-14 h-14 rounded-full object-cover border-2 border-[#A0BC94]">
-        <div>
-          <h4 class="font-bold text-[#DFE9B7]">سارة</h4>
-          <p class="text-sm text-[#A0BC94]">رائدة أعمال</p>
+    <div class="swiper-slide">
+      <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-xl relative">
+        <i class="fa-solid fa-quote-right text-4xl text-[#A0BC94] absolute top-4 right-4 opacity-80"></i>
+        <div class="flex items-center gap-4 mb-4">
+          <img src="https://i.pravatar.cc/100?img=5" alt="صورة سارة" class="w-14 h-14 rounded-full object-cover border-2 border-[#A0BC94]">
+          <div>
+            <h4 class="font-bold text-[#DFE9B7]">سارة</h4>
+            <p class="text-sm text-[#A0BC94]">رائدة أعمال</p>
+          </div>
+        </div>
+        <p class="text-[#F0F3D1] italic mb-4">"سريع ومبدع، حوّل فكرتي إلى واقع بزمن قياسي. أنصح بالتعامل معه جداً."</p>
+        <div class="flex gap-1 text-yellow-400">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
         </div>
       </div>
-      <p class="text-[#F0F3D1] italic mb-4">"سريع ومبدع، حوّل فكرتي إلى واقع بزمن قياسي. أنصح بالتعامل معه جداً."</p>
-      <div class="flex gap-1 text-yellow-400">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-      </div>
     </div>
-    
-    <!-- تقييم إضافي -->
-    <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-xl relative">
-      <i class="fa-solid fa-quote-right text-4xl text-[#A0BC94] absolute top-4 right-4 opacity-80"></i>
-      <div class="flex items-center gap-4 mb-4">
-        <img src="https://i.pravatar.cc/100?img=11" alt="صورة عميل" class="w-14 h-14 rounded-full object-cover border-2 border-[#A0BC94]">
-        <div>
-          <h4 class="font-bold text-[#DFE9B7]">ليلى</h4>
-          <p class="text-sm text-[#A0BC94]">مصمّمة مواقع</p>
+
+    <!-- تقييم ليلى -->
+    <div class="swiper-slide">
+      <div class="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-xl relative">
+        <i class="fa-solid fa-quote-right text-4xl text-[#A0BC94] absolute top-4 right-4 opacity-80"></i>
+        <div class="flex items-center gap-4 mb-4">
+          <img src="https://i.pravatar.cc/100?img=11" alt="صورة ليلى" class="w-14 h-14 rounded-full object-cover border-2 border-[#A0BC94]">
+          <div>
+            <h4 class="font-bold text-[#DFE9B7]">ليلى</h4>
+            <p class="text-sm text-[#A0BC94]">مصمّمة مواقع</p>
+          </div>
+        </div>
+        <p class="text-[#F0F3D1] italic mb-4">"تفاصيل دقيقة، واهتمام بالتجربة وسرعة في التسليم. أفضل مبرمج تعاملت معه!"</p>
+        <div class="flex gap-1 text-yellow-400">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
         </div>
       </div>
-      <p class="text-[#F0F3D1] italic mb-4">"تفاصيل دقيقة، واهتمام بالتجربة وسرعة في التسليم. أفضل مبرمج تعاملت معه!"</p>
-      <div class="flex gap-1 text-yellow-400">
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-regular fa-star"></i>
-      </div>
     </div>
-    
+
+  </div>
+
+  <!-- الدوائر -->
+  <div class="swiper-pagination mt-6 text-center"></div>
+</div>
+
   </div>
 </section>
-  
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: {
+      delay: 2200,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    slidesPerView: 1,
+    spaceBetween: 20,
+  });
+</script>
+
+
+
+
   <!-- تواصل -->
 <section id="contact" class="py-24 px-6 bg-gradient-to-br from-[#014A3F] via-[#052c24] to-[#000] relative overflow-hidden text-white">
   <!-- لمعة خلفية -->
@@ -599,6 +633,20 @@
       <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp hover:text-white transition"></i></a>
       <a href="#" aria-label="Telegram"><i class="fa-brands fa-telegram hover:text-white transition"></i></a>
     </div>
+
+
+<!-- وسائل الدفع -->
+<div class="mt-10 text-center">
+  <h3 class="text-[#DFE9B7] text-lg font-semibold mb-4">نقبل وسائل الدفع التالية:</h3>
+  <div class="flex flex-wrap items-center justify-center gap-4">
+    <img src="/images/syriatel.png" alt="سيريتل كاش" class="h-10 w-auto object-contain rounded-md shadow-md">
+    <img src="/images/mtn.png" alt="MTN كاش" class="h-10 w-auto object-contain rounded-md shadow-md">
+    <img src="/images/chamcash.png" alt="شام كاش" class="h-10 w-auto object-contain rounded-md shadow-md mb-3">
+    <img src="/images/western.png" alt="ويسترن يونيون" class="h-10 w-auto object-contain rounded-md shadow-md mb-3">
+  </div>
+</div>
+
+
 
     <!-- وسائل الدفع -->
     <div class="flex justify-center gap-6 text-[#DFE9B7] text-xl mb-6">

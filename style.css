@@ -1,0 +1,23 @@
+*{
+  scroll-behavior: smooth;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, button, div, span {
+    font-family: 'Cairo', sans-serif !important;
+  }
+  
+  
+  /* لون الدوائر */
+  .swiper-pagination-bullet {
+    background-color: #DFE9B7 !important; /* الأصفر المستخدم عندك */
+    opacity: 0.5;
+  }
+
+  /* لون الدائرة النشطة */
+  .swiper-pagination-bullet-active {
+    background-color: #F8FFCF !important; /* أفتح أو نفس اللون لكن أوضح */
+    opacity: 1;
+  }
+#reviews{
+  overflow: hidden;
+}
